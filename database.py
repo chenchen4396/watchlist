@@ -18,14 +18,19 @@ class Person(Base):
     #  字段
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(50), nullable=False)
-    gender = Column(Integer, default=0, comment="1男，2女")
-    pnumber =(Column(String(50), nullable=False))
+    gender = Column(Integer, comment="1男，2女")
+    birthday=Column(Integer(8))
+    area =Column(String(30))
+    pnumber =(Column(String(20), nullable=False))
+    email = (Column(String(20)))
+
 class Photos(Base):
     # 创建表结构操作
     # 表名
     __tablename__ = 'uphotos'
     #  字段
     id = Column(Integer, primary_key=True, autoincrement=True)
+    uid = Column(Integer,ForeignKey("user.id"))
     url = Column(String(50), nullable=False)
 Base.metadata.create_all()
 # 创建一个会话
