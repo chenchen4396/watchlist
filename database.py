@@ -1,40 +1,26 @@
-from sqlalchemy import *
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
-HOSTNAME = '127.0.0.1'
-DATABASE = 'flask'
-PORT = 3306
-USERNAME = 'root'
-PASSWORD = 'Apromise202077+'
-DB_URL = 'mysql+pymysql://{}:{}@{}:{}/{}'.format(USERNAME,PASSWORD,HOSTNAME,PORT,DATABASE)
-engine = create_engine(DB_URL)
+from flask_login import UserMixin
+from werkzeug.security import generate_password_hash, check_password_hash
+from watchlist import db,app
+class User(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(20))
+    username = db.Column(db.String(20))
+    password_hash = db.Column(db.String(128))
 
-Base = declarative_base(engine)
+    def set_password(self, password):
+        self.password_hash = generate_password_hash(password)
 
-class Person(Base):
-    # 创建表结构操作
-    # 表名
-    __tablename__ = 'user'
-    #  字段
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    name = Column(String(50), nullable=False)
-    gender = Column(Integer, comment="1男，2女")
-    birthday=Column(Integer(8))
-    area =Column(String(30))
-    pnumber =(Column(String(20), nullable=False))
-    email = (Column(String(20)))
-
-class Photos(Base):
+    def validate_password(self, password):
+        return check_password_hash(self.password_hash, password)
+class Photos(db.Model):
     # 创建表结构操作
     # 表名
     __tablename__ = 'uphotos'
     #  字段
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    uid = Column(Integer,ForeignKey("user.id"))
-    url = Column(String(50), nullable=False)
-Base.metadata.create_all()
-# 创建一个会话
-session = sessionmaker(engine)()
-p1 = Person(name='张三', gender='1',pnumber='1234')
-session.add(p1)
-session.commit()
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    uid = db.Column(db.Integer,db.ForeignKey("user.id"))
+    url = db.Column(db.String(50), nullable=False)
+with app.app_context():
+    # db.init_app(app)
+    db.drop_all()
+    db.create_all()
