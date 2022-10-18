@@ -14,7 +14,7 @@ def user():
 #
 # @app.route('/')
 # def hello():
-#     return 'Welcome to My Watchlist!'
+#     return login
 
 # @app.route('/login', methods=['GET', 'POST'])
 # def login():
