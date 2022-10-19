@@ -1,8 +1,7 @@
 from flask import request, url_for, redirect
 from flask_login import current_user
 from watchlist import db,app
-
-
+from flask import render_template
 @app.route('/')
 def index():
     return 'hello'
@@ -37,7 +36,7 @@ def user():
 #         return redirect(url_for('login'))
 #
 #     return render_template('login.html')
-#
+
 # @app.route('/logout')
 # @login_required
 # def logout():
