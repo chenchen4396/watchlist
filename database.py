@@ -20,7 +20,7 @@ class Photos(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     uid = db.Column(db.Integer,db.ForeignKey("user.id"))
     url = db.Column(db.String(50), nullable=False)
-with app.app_context():
-    # db.init_app(app)
-    db.drop_all()
-    db.create_all()
+# with app.app_context():
+#     # db.init_app(app)
+#     db.drop_all()
+#     db.create_all()
