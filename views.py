@@ -7,6 +7,7 @@ from flask_login import current_user
 from flask_login import LoginManager
 from watchlist import db,app
 from watchlist.database import  User,Photos
+from watchlist.__init__ import  load_user
 @app.route('/')
 def hello():
     return 'hello'
@@ -45,3 +46,9 @@ def logout():
     logout_user()
     flash('Goodbye.')
     return redirect(url_for('index'))
+
+@app.route('/personal/<int:id>')
+# @login_required
+def homepage(id):
+    user=load_user(id)
+    return render_template('homepage.html',user=user);
