@@ -51,6 +51,6 @@ def logout():
 # @login_required
 def homepage(id):
     user=load_user(id)
-    return render_template('homepage.html',user=user)
+    return render_template('index.html',user=user)
 
 
