@@ -12,10 +12,6 @@ from watchlist.__init__ import  load_user
 def hello():
     return 'hello'
 
-@app.route('/index')
-def index():
-    return render_template('index.html')
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -32,7 +28,7 @@ def login():
         if username == user.username and password == user.password:
             login_user(user)  # 登入用户
             flash('Login success.')
-            return redirect(url_for('index'))  # 重定向到主页
+            return redirect(url_for('personal'))  # 重定向到主页
 
         else:
             flash('Invalid username or password.')  # 如果验证失败，显示错误消息
@@ -47,16 +43,15 @@ def logout():
     flash('Goodbye.')
     return redirect(url_for('index'))
 
-@app.route('/personal/<int:id>')
+@app.route('/personal')
 @login_required
-def homepage(id):
-    user=load_user(id)
-    return render_template('homepage.html',user=user)
+def homepage():
+    return render_template('homepage.html',user=current_user)
 
 # 用于展示照片
 @app.route('/findphoto')
 @login_required
 def findphotos():
     photos=Photos.query.filter(Photos.uid == current_user.id)
-    return render_template('findphotos.html',photos=photos)
+    return render_template('home.html', photos=photos)
 
