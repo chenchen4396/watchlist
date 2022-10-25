@@ -5,13 +5,40 @@
     <title>Title</title>
 </head>
 <body>
+    <div>
+        {{ user.name }}
+    </div>
+    <a href="./all">
+        <button type="button" id="all">
+            全部照片
+        </button>
+    </a>
+    <button type="button" id="near">
+        最近上传
+    </button>
+    <button type="button" id="photo">
+        相册
+    </button>
+    <button type="button" id="person">
+        人物
+    </button>
+    <button type="button" id="place">
+        地点
+    </button>
+    <button type="button" id="share">
+        分享
+    </button>
+    <button type="button" id="rubbish">
+        回收站
+    </button>
+    <button type="button" id="addfrom">
+        网盘导入
+    </button>
+</body>
 {%  for photo in photos %}
     <div>
         <img src=" {{  photo.url  }}">
 
     </div>
 {%  endfor %}
-
-
-</body>
 </html>
