@@ -30,7 +30,7 @@ def upload():
         #在成功上传图片后，上传图片的信息到数据库
         photo=Photos()
         photo.uid=current_user.id
-        photo.url=upload_path
+        photo.url=os.path.join('static/photo', secure_filename(f.filename))
         db.session.add(photo)
         db.session.commit()
     return render_template('upload.html')

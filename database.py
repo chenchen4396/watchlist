@@ -8,6 +8,7 @@ class User(db.Model, UserMixin):
     name = db.Column(db.String(20))
     username = db.Column(db.String(20))
     password = db.Column(db.String(128))
+    # photos=db.relationship('Photos',backref='user')
     def __init__(self):
         self.username=None
         self.id=None
@@ -36,6 +37,7 @@ class Photos(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     uid = db.Column(db.Integer,db.ForeignKey("user.id"))
     url = db.Column(db.String(100), nullable=False)
+
     def __init__(self):
         self.id=None
         self.uid=None
