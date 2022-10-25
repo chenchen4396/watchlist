@@ -48,9 +48,15 @@ def logout():
     return redirect(url_for('index'))
 
 @app.route('/personal/<int:id>')
-# @login_required
+@login_required
 def homepage(id):
     user=load_user(id)
     return render_template('homepage.html',user=user)
 
+# 用于展示照片
+@app.route('/findphoto')
+@login_required
+def findphotos():
+    photos=Photos.query.filter(Photos.uid == current_user.id)
+    return render_template('findphotos.html',photos=photos)
 
