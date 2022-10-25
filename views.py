@@ -15,6 +15,13 @@ def hello():
 @app.route('/index')
 def index():
     return render_template('index.html')
+@app.route('/grxx')
+def grxx():
+    return render_template('grxx.html')
+
+@app.route('/xiugaimima')
+def grxx():
+    return render_template('xiugaimima.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
