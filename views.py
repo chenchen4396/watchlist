@@ -12,6 +12,19 @@ from watchlist.__init__ import  load_user
 def hello():
     return 'hello'
 
+@app.route('/index')
+def index():
+    return render_template('index.html')
+
+@app.route('/grxx')
+def grxx():
+    return render_template('grxx.html')
+
+@app.route('/xgmm')
+def grxx():
+    return render_template('xgmm.html')
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':

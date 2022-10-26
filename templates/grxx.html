@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<!--代码由www.magicalcoder.com可视化布局器拖拽生成 资源请自行下载到本地-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>layui-由www.magicalcoder.com可视化布局器生成</title>
+    <link href="https://cdn.jsdelivr.net/npm/layui-src@2.4.5/dist/css/layui.css" rel="stylesheet" />
+    <link href="http://lowcode.magicalcoder.com/magicalcoder/assets/drag/ui/magicalcoder/1.1.0/magicalcoder.css"
+        rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/json3/3.3.3/json3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/extension/dataTool.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/layui-src@2.4.5/dist/layui.all.js"></script>
+    <script src="http://www.magicalcoder.com/assets/js/common.js"></script>
+    <script
+        src="http://lowcode.magicalcoder.com/magicalcoder/assets/drag/ui/magicalcoder/1.1.0/magicalcoder.js"></script>
+    <style>
+
+    </style>
+
+</head>
+
+<body class="layui-form" style="">
+
+    <body class="layui-form">
+        <div id="magicalDragScene" class="mc-root mc-ui-absolute-pane">
+            <ul class="layui-nav layui-nav-tree"
+                style="position: absolute; left: 0%; top: 10%; width: 20%; height: 600px;">
+                <li class="layui-nav-item">
+                    <a href="javascript:;">照片</a>
+                    <dl class="layui-nav-child">
+                        <dd>
+                            <a href="login.html">全部照片</a>
+                        </dd>
+                        <dd>
+                            <a>最近上传</a>
+                        </dd>
+                    </dl>
+                </li>
+                <li id="uuide4f78941-aa7f-4a92-a905-63cb48e56061" class="layui-nav-item">
+                    <a href="javascript:;">相册</a>
+                    <dl class="layui-nav-child">
+                        <dd>
+                            <a>相册</a>
+                        </dd>
+                        <dd id="uuid373a4bd0-e62b-41c3-bc98-58edc76b522b">
+                            <a>人物</a>
+                        </dd>
+                        <dd id="uuide2ef5964-06c1-422f-97cc-b5b2e5c29de0">
+                            <a>地点</a>
+                        </dd>
+                        <dd>
+                            <a>事务</a>
+                        </dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a>分享</a>
+                </li>
+                <li id="uuid73f297ce-3010-4735-be60-9f9e18669ed0" class="layui-nav-item">
+                    <a>回收站</a>
+                </li>
+                <li id="uuid4c4a6401-2418-4672-84a5-8a520c937ac1" class="layui-nav-item">
+                    <a>网盘导入</a>
+                </li>
+            </ul>
+            <textarea class="layui-textarea"
+                style="position: absolute; left: 0%; top: 0%; font-size: 20px; width: 20%; border-top-color: rgb(84, 47, 47); height: 8px; bottom: 0px;"
+                placeholder="请输入内容" readonly>马赛克相册</textarea>
+            <label class="layui-form-label" style="position: absolute; left: 20%; top: 5%;">个人信息</label>
+            <a style="position: absolute; left:35%; top: 6%;" href="http://127.0.0.1:5000//index">隐私保护云相册</a>
+            <img style="width: 10%; position: absolute; left: 42%; top: 20%;" src="img.jpg" />
+            <div class="layui-input-block" style="position: absolute; left: 50%; top: 20%;">
+                <div>
+                    {{user.username}}
+                </div>
+                <br />
+                <div>
+                    {{user.uid}}
+                </div>
+                <br />
+                <div>
+                    图片数量
+                </div>
+                <br />
+                <div>
+                    视频数量
+                </div>
+            </div>
+            <div id="uuid9f3265c5-5d0e-42b6-82d5-7d0f0cf9aa14" class="layui-input-block"
+                style="position: absolute; left: 30%; top: 50%;">
+                <a class="layui-btn"  href="http://127.0.0.1:5000//xgmm" >修改密码</a>
+                <a class="layui-btn" href="http://127.0.0.1:5000//grxx">相册</a>
+                <a class="layui-btn" href="http://127.0.0.1:5000//grxx">设置</a>
+                <a class="layui-btn" href=" http://127.0.0.1:5000/login">退出登录</a>
+            </div>
+        </div>
+        <script>//以下脚本为标签属性转换成layui组件的还原过程
+            //调试:打开浏览器控制台(F12),在代码中某行增加 debugger 即可调试
+            var $ = layui.jquery, laytpl = layui.laytpl, laydate = layui.laydate, form = layui.form, layedit = layui.layedit, slider = layui.slider, element = layui.element, colorpicker = layui.colorpicker, upload = layui.upload, rate = layui.rate, carousel = layui.carousel, table = layui.table, flow = layui.flow;
+            var magicalDragLayuiUtil = {
+                rebuildLayUiControls: function () {
+                    var _t = this;
+                    //日期
+                    $(".magicalcoder-laydate").each(function (idx, item) {
+                        laydate.render(_t.iteratorAttr({
+                            elem: item
+                        }, item));
+                    })
+                    //富文本
+                    $(".magicalcoder-layedit").each(function (idx, item) {
+                        var mcDataId = $(item).attr("id");
+                        if (mcDataId) {
+                            layedit.build(mcDataId, {
+                                height: 300
+                            });
+                        }
+                    })
+                    //外键
+                    $(".magicalcoder-foreign-select2").each(function (idx, item) {
+                        var mcDataId = $(item).attr("id");
+                        if (mcDataId) {
+                            $("#" + mcDataId).select2({
+                                allowClear: true,
+                                width: "150px",
+                                delay: 500,
+                            });
+                        }
+                    })
+                    //颜色选择器
+                    $(".magicalcoder-color-picker").each(function (idx, item) {
+                        colorpicker.render(_t.iteratorAttr({
+                            elem: $(item)
+                        }, item));
+                    })
+                    //上传组件
+                    $(".magicalcoder-layupload").each(function (idx, item) {
+                        upload.render(_t.iteratorAttr({
+                            elem: $(item)
+                        }, item));
+                    })
+                    //滑块
+                    $(".magicalcoder-slider").each(function (idx, item) {
+                        slider.render(_t.iteratorAttr({
+                            elem: $(item)
+                        }, item));
+                    })
+                    //评分
+                    $(".magicalcoder-rate").each(function (idx, item) {
+                        rate.render(_t.iteratorAttr({
+                            elem: $(item)
+                        }, item));
+                    })
+                    //轮播
+                    $(".layui-carousel").each(function (idx, item) {
+                        carousel.render(_t.iteratorAttr({
+                            elem: $(item)
+                        }, item));
+                    })
+                    //流加载
+                    $(".magicalcoder-flow").each(function (idx, item) {
+                        flow.load(_t.iteratorAttr({
+                            elem: $(item)
+                        }, item));
+                    })
+                    //代码
+                    $(".magicalcoder-code").each(function (idx, item) {
+                        layui.code(_t.iteratorAttr({
+                            elem: $(item)
+                        }, item));
+                    })
+                    //弹窗
+                    $(".magicalcoder-layer").each(function (idx, item) {
+                        //先隐藏起来
+                        $(this).next().hide();
+                        $(this).click(function () {
+                            var config = _t.iteratorAttr({
+                                elem: $(item)
+                            }, item);
+                            var type = config.type;
+                            if (type + '' == 1) {
+                                config.content = $(this).next();
+                                if (!config.content.hasClass("magicalcoder-layer-content")) {
+                                    config.content = config.content.find(".magicalcoder-layer-content")
+                                }
+                            }
+                            if (config.btn) {
+                                config.btn = config.btn.split(",")
+                            }
+                            if (config.area) {
+                                config.area = config.area.split(",")
+                            }
+                            layer.open(config)
+                        })
+                    })
+                    //动态表格 我们单独封装了layui-table的初始化方式 至于数据排序 返回格式 等操作请根据你的具体环境自行封装
+                    $(".magicalcoder-table").each(function (idx,
+                        item) {
+                        var cols = [];
+                        //读取列配置
+                        $(this).find(".magicalcoder-table-th").each(function (i, th) {
+                            cols.push(_t.iteratorAttr({
+                                title: $(this).text()
+                            }, th));
+                        })
+                        var tableConfig = _t.iteratorAttr({
+                            elem: $(item),
+                            cols: [cols]
+                        },
+                            item);
+                        //初始化表格 至于返回的数据格式 您可以根据自己的系统自行改造 这里仅做一个示例 参考js\\data\\list.json
+                        table.render(tableConfig);
+                    })
+                    //部分组件初始化
+                    element.init();
+                    //表单初始化
+                    form.render();
+                },
+                //将标签上的属性 转换成layui函数初始化时的参数名:参数值
+                iteratorAttr: function (renderConfig, dom) {
+                    var attrs = dom.attributes;
+                    for (var i = 0; i < attrs.length; i++) {
+                        var attr = attrs[i];
+                        var name = attr.name;
+                        var value = attr.value;
+                        if (name.indexOf("mc-") === 0) {
+                            name = name.replace("mc-attr-", '');
+                            name = name.replace("mc-event-", '');
+                            if (name.indexOf('str-') === 0) {
+                                name = name.replace('str-', '');
+                            } else if (name.indexOf('bool-') === 0) {
+                                name = name.replace('bool-', '');
+                                value == 'true' || value === '' ? value = true : value = value;
+                                value == 'false' ? value = false : value = value;
+                            } else if (name.indexOf('num-') === 0) {
+                                name = name.replace('num-', '');
+                                if (value !== '' && !isNaN(value)) {
+                                    value = parseFloat(value);
+                                }
+                            } else if (name.indexOf('json-') === 0) {
+                                name = name.replace('json-', '');
+                                if (value !== '') {
+                                    value = JSON.parse(value);
+                                }
+                            }
+                            renderConfig[this.htmlAttrNameToTuoFeng(name)] = value;
+                        }
+                    }
+                    return renderConfig;
+                },
+                //user-name ->userName html上的标签名转换成驼峰名称
+                htmlAttrNameToTuoFeng: function (name) {
+                    var arr = name.split("-");
+                    var newArr = []
+                    for (var i = 0; i < arr.length; i++) {
+                        if (i != 0) {
+                            if (arr[i] != '') {
+                                newArr.push(this.firstCharToUpLower(arr[i]));
+                            }
+                        } else {
+                            newArr.push(arr[i]);
+                        }
+                    }
+                    return newArr.join('');
+                },
+                //首字母大写
+                firstCharToUpLower: function (name) {
+                    var arr = name.split("");
+                    arr[0] = arr[0].toUpperCase();
+                    return arr.join('');
+                },
+            }
+            magicalDragLayuiUtil.rebuildLayUiControls();
+            //echarts自动初始化
+            new McECharts().render();
+        //functions-begin
+        //functions-end</script>
+        </script>
+    </body>
+    <script>
+        //以下脚本为标签属性转换成layui组件的还原过程
+        //调试:打开浏览器控制台(F12),在代码中某行增加 debugger 即可调试
+        var $ = layui.jquery, laytpl = layui.laytpl, laydate = layui.laydate, form = layui.form, layedit = layui.layedit, slider = layui.slider, element = layui.element, colorpicker = layui.colorpicker, upload = layui.upload, rate = layui.rate, carousel = layui.carousel, table = layui.table, flow = layui.flow;
+        var magicalDragLayuiUtil = {
+            rebuildLayUiControls: function () {
+                var _t = this;
+                //日期
+                $(".magicalcoder-laydate").each(function (idx, item) {
+                    laydate.render(_t.iteratorAttr({
+                        elem: item
+                    }, item));
+                })
+                //富文本
+                $(".magicalcoder-layedit").each(function (idx, item) {
+                    var mcDataId = $(item).attr("id");
+                    if (mcDataId) {
+                        layedit.build(mcDataId, {
+                            height: 300
+                        });
+                    }
+                })
+                //外键
+                $(".magicalcoder-foreign-select2").each(function (idx, item) {
+                    var mcDataId = $(item).attr("id");
+                    if (mcDataId) {
+                        $("#" + mcDataId).select2({
+                            allowClear: true,
+                            width: "150px",
+                            delay: 500,
+                        });
+                    }
+                })
+                //颜色选择器
+                $(".magicalcoder-color-picker").each(function (idx, item) {
+                    colorpicker.render(_t.iteratorAttr({
+                        elem: $(item)
+                    }, item));
+                })
+                //上传组件
+                $(".magicalcoder-layupload").each(function (idx, item) {
+                    upload.render(_t.iteratorAttr({
+                        elem: $(item)
+                    }, item));
+                })
+                //滑块
+                $(".magicalcoder-slider").each(function (idx, item) {
+                    slider.render(_t.iteratorAttr({
+                        elem: $(item)
+                    }, item));
+                })
+                //评分
+                $(".magicalcoder-rate").each(function (idx, item) {
+                    rate.render(_t.iteratorAttr({
+                        elem: $(item)
+                    }, item));
+                })
+                //轮播
+                $(".layui-carousel").each(function (idx, item) {
+                    carousel.render(_t.iteratorAttr({
+                        elem: $(item)
+                    }, item));
+                })
+                //流加载
+                $(".magicalcoder-flow").each(function (idx, item) {
+                    flow.load(_t.iteratorAttr({
+                        elem: $(item)
+                    }, item));
+                })
+                //代码
+                $(".magicalcoder-code").each(function (idx, item) {
+                    layui.code(_t.iteratorAttr({
+                        elem: $(item)
+                    }, item));
+                })
+                //弹窗
+                $(".magicalcoder-layer").each(function (idx, item) {
+                    //先隐藏起来
+                    $(this).next().hide();
+                    $(this).click(function () {
+                        var config = _t.iteratorAttr({
+                            elem: $(item)
+                        }, item);
+                        var type = config.type;
+                        if (type + '' == 1) {
+                            config.content = $(this).next();
+                            if (!config.content.hasClass("magicalcoder-layer-content")) {
+                                config.content = config.content.find(".magicalcoder-layer-content")
+                            }
+                        }
+                        if (config.btn) {
+                            config.btn = config.btn.split(",")
+                        }
+                        if (config.area) {
+                            config.area = config.area.split(",")
+                        }
+                        layer.open(config)
+                    })
+                })
+                //动态表格 我们单独封装了layui-table的初始化方式 至于数据排序 返回格式 等操作请根据你的具体环境自行封装
+                $(".magicalcoder-table").each(function (idx,
+                    item) {
+                    var cols = [];
+                    //读取列配置
+                    $(this).find(".magicalcoder-table-th").each(function (i, th) {
+                        cols.push(_t.iteratorAttr({
+                            title: $(this).text()
+                        }, th));
+                    })
+                    var tableConfig = _t.iteratorAttr({
+                        elem: $(item),
+                        cols: [cols]
+                    },
+                        item);
+                    //初始化表格 至于返回的数据格式 您可以根据自己的系统自行改造 这里仅做一个示例 参考js\\data\\list.json
+                    table.render(tableConfig);
+                })
+                //部分组件初始化
+                element.init();
+                //表单初始化
+                form.render();
+            },
+            //将标签上的属性 转换成layui函数初始化时的参数名:参数值
+            iteratorAttr: function (renderConfig, dom) {
+                var attrs = dom.attributes;
+                for (var i = 0; i < attrs.length; i++) {
+                    var attr = attrs[i];
+                    var name = attr.name;
+                    var value = attr.value;
+                    if (name.indexOf("mc-") === 0) {
+                        name = name.replace("mc-attr-", '');
+                        name = name.replace("mc-event-", '');
+                        if (name.indexOf('str-') === 0) {
+                            name = name.replace('str-', '');
+                        } else if (name.indexOf('bool-') === 0) {
+                            name = name.replace('bool-', '');
+                            value == 'true' || value === '' ? value = true : value = value;
+                            value == 'false' ? value = false : value = value;
+                        } else if (name.indexOf('num-') === 0) {
+                            name = name.replace('num-', '');
+                            if (value !== '' && !isNaN(value)) {
+                                value = parseFloat(value);
+                            }
+                        } else if (name.indexOf('json-') === 0) {
+                            name = name.replace('json-', '');
+                            if (value !== '') {
+                                value = JSON.parse(value);
+                            }
+                        }
+                        renderConfig[this.htmlAttrNameToTuoFeng(name)] = value;
+                    }
+                }
+                return renderConfig;
+            },
+            //user-name -> userName html上的标签名转换成驼峰名称
+            htmlAttrNameToTuoFeng: function (name) {
+                var arr = name.split("-");
+                var newArr = []
+                for (var i = 0; i < arr.length; i++) {
+                    if (i != 0) {
+                        if (arr[i] != '') {
+                            newArr.push(this.firstCharToUpLower(arr[i]));
+                        }
+                    } else {
+                        newArr.push(arr[i]);
+                    }
+                }
+                return newArr.join('');
+            },
+            //首字母大写
+            firstCharToUpLower: function (name) {
+                var arr = name.split("");
+                arr[0] = arr[0].toUpperCase();
+                return arr.join('');
+            },
+        }
+        magicalDragLayuiUtil.rebuildLayUiControls();
+        //echarts自动初始化
+        new McECharts().render();
+//functions-begin
+//functions-end
+    </script>
+</body>
+
+</html>
