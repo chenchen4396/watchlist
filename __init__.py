@@ -28,5 +28,5 @@ def inject_user():
     from .database  import User
     user = User.query.first()
     return dict(user=user)
-from watchlist import views, errors, commands,database,upload
+from watchlist import views, errors, commands,database,upload,register
 app.run()
