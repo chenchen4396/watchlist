@@ -21,7 +21,7 @@ def grxx():
     return render_template('grxx.html')
 
 @app.route('/xgmm')
-def grxx():
+def xgmm():
     return render_template('xgmm.html')
 
 
